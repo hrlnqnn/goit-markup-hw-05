@@ -5,7 +5,7 @@
 body {
     font-family: 'Roboto', 'Helvetica Neue', 'Verdana', 'Tahoma', sans-serif;
     font-size: 14px;
-    line-height: 1.2;
+    line-height: 1.17;
     letter-spacing: 0.03em;
 }
 
@@ -226,7 +226,8 @@ img {
     cursor: pointer;
 
     transition-property: color;
-    transition-duration: var(--transition-duration) transition-timing-function: var(--transition-timing-function);
+    transition-duration: var(--transition-duration);
+    transition-timing-function: var(--transition-timing-function);
 }
 
 .adress-link:hover,
@@ -249,10 +250,10 @@ img {
 
 .banner {
     max-width: 1600px;
-    min-height: 600px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 200px;
+    padding-bottom: 200px;
 
     background-color: var(--main-bg-color);
     background-image: linear-gradient(to right,
@@ -267,7 +268,9 @@ img {
 
 .banner-titel {
     width: 696px;
+    margin: 0 auto;
     margin-bottom: 30px;
+
 
     font-size: 44px;
     line-height: 1.4;
@@ -277,22 +280,16 @@ img {
     color: var(--secondary-color);
 }
 
-.titel {
-    display: flex;
-    justify-content: center;
-}
 
 .titel-none {
     display: none;
 }
 
-.block-banner-btn {
-    display: flex;
-    justify-content: center;
-
-}
 
 .banner-btn {
+    display: block;
+    margin: 0 auto;
+
     height: 50px;
     min-width: 216px;
 
@@ -377,6 +374,7 @@ img {
 /* work */
 
 .work {
+    text-align: center;
     margin-bottom: 50px;
 
     color: var(--main-text-color);
@@ -402,17 +400,15 @@ img {
 
 .work-list-box {
     position: absolute;
-    top: 224px;
+    bottom: 0;
     right: 0;
-}
 
-.work-list-box {
-    width: 370px;
+    width: 100%;
     padding-top: 27px;
     padding-bottom: 27px;
 
     font-weight: 700;
-    line-height: 16px;
+    line-height: 1.14;
     letter-spacing: 0.03em;
     text-align: center;
     color: var(--secondary-color);
@@ -427,7 +423,8 @@ img {
 }
 
 .team-titel {
-    margin: 0 0 50px 0;
+    text-align: center;
+    margin-bottom: 50px;
 
     color: var(--main-text-color);
     font-weight: 700;
@@ -475,34 +472,29 @@ img {
     color: var(--secondary-text-color);
 }
 
-.block-icon-team {
-    cursor: pointer;
-}
-
 .link-icon-team {
     display: flex;
+    align-items: center;
     justify-content: center;
 
     width: 44px;
     height: 44px;
-    padding-top: 12px;
 
     color: var(--clients-icon-color);
+    border-radius: 50%;
 
-    transition-property: width, height, background-color, border-radius, color;
+    transition-property: background-color, color;
     transition-duration: var(--transition-duration);
     transition-timing-function: var(--transition-timing-function);
 }
 
 .link-icon-team:hover,
 .link-icon-team:focus {
-    width: 44px;
-    height: 44px;
-
     color: var(--secondary-color);
     background-color: var(--main-color);
-    border-radius: 50%;
+
 }
+
 
 .list-icon {
     display: flex;
@@ -511,16 +503,6 @@ img {
     gap: 10px;
 
     list-style: none;
-}
-
-.icon-team {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-
-    transition-property: color;
-    transition-duration: var(--transition-duration);
-    transition-timing-function: var(--transition-timing-function);
 }
 
 .icon-team:hover,
@@ -539,6 +521,7 @@ img {
 }
 
 .clients-titel {
+    text-align: center;
     margin: 0 0 50px 0;
 
     font-weight: 700;
@@ -548,8 +531,6 @@ img {
 
 .clients-list li:not(:last-child) {
     margin-right: 30px;
-
-    color: var(--clients-icon-color);
 }
 
 .clients-link {
@@ -561,9 +542,9 @@ img {
     height: 92px;
     color: var(--clients-icon-color);
     border-radius: 4px;
-    outline: 1px solid var(--clients-icon-color);
+    border: 1px solid var(--clients-icon-color);
 
-    transition-property: color, outline-color;
+    transition-property: color, border-color;
     transition-duration: var(--transition-duration);
     transition-timing-function: var(--transition-timing-function);
 }
@@ -571,12 +552,13 @@ img {
 .clients-link:hover,
 .clients-link:focus {
     color: var(--main-color);
-    outline-color: var(--main-color);
+    border-color: var(--main-color);
 }
 
 .projects-btn-list {
     display: flex;
     justify-content: center;
+    gap: 8px;
 
     margin-bottom: 50px;
 
@@ -636,7 +618,6 @@ img {
 .projects-btn {
     padding: 6px 25px 6px 25px;
 
-    font-family: 'Roboto';
     font-weight: 500;
     font-size: 16px;
     line-height: 1.6;
@@ -653,10 +634,6 @@ img {
     transition-timing-function: var(--transition-timing-function);
 }
 
-.projects-btn:last-child {
-    margin-right: 8px;
-}
-
 .projects-btn:hover,
 .projects-btn:focus {
     color: var(--secondary-color);
@@ -666,10 +643,6 @@ img {
 
 .box-overlay {
     position: relative;
-    width: 370px;
-    height: 294px;
-    margin-left: auto;
-    margin-right: auto;
     overflow: hidden;
 }
 
@@ -686,7 +659,6 @@ img {
     height: 100%;
     background-color: var(--main-color);
 
-    transition-property: background-color;
     transform: translatey(101%);
     transition: transform var(--transition-duration) var(--transition-timing-function);
 }
@@ -730,6 +702,10 @@ img {
     align-items: baseline;
 }
 
+.footer-info {
+    margin-right: 70px;
+}
+
 .logo-footer {
     display: block;
     margin: 0 0 20px 0;
@@ -743,7 +719,6 @@ img {
 }
 
 .footer-list {
-    margin-right: 70px;
     list-style: none;
 }
 
@@ -791,8 +766,9 @@ img {
 
 .social-media p {
     margin-bottom: 20px;
+
+    font-weight: 700;
     line-height: 1.1;
-    letter-spacing: 0.03em;
     color: var(--secondary-color);
 }
 
@@ -817,13 +793,13 @@ img {
 .link-footer {
     display: flex;
     align-items: center;
+    justify-content: center;
 
     width: 44px;
     height: 44px;
+    border-radius: 50%;
 
-    cursor: pointer;
-
-    transition-property: background-color, border-radius;
+    transition-property: background-color;
     transition-duration: 250ms;
     transition-timing-function: var(--transition-timing-function);
 }
@@ -831,13 +807,9 @@ img {
 .link-footer:hover,
 .link-footer:focus {
     background-color: var(--main-color);
-    border-radius: 50%;
 }
 
 .icon-footer {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
     fill: var(--secondary-color);
 }
 
@@ -850,6 +822,7 @@ img {
     height: 100%;
 
     background-color: var(--backdrop-bg-color);
+    transition: opacity var(--transition-duration), visibility var(--transition-timing-function);
 }
 
 .backdrop.is-hidden {
